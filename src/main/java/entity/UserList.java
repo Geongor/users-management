@@ -1,7 +1,14 @@
 package entity;
 
 import javax.xml.bind.annotation.*;
+import java.util.ArrayList;
 import java.util.List;
+
+/**
+ * Класс для работы со список пользователей
+ * и необходимы для записи/чтения из XML файла
+ *
+ * */
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -15,6 +22,7 @@ public class UserList {
     }
 
     public UserList() {
+        users = new ArrayList<User>();
     }
 
     public void printUsersList(){

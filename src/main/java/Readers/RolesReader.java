@@ -12,7 +12,12 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
-import java.util.List;
+
+
+/**
+ * Реализует чтение возможных ролей из xml файла
+ *
+ * */
 
 public class RolesReader {
 
@@ -24,6 +29,7 @@ public class RolesReader {
     public RolesReader() {
 
         this.file = new File(filePath);
+
 
         try {
             this.context = JAXBContext.newInstance(RoleList.class);

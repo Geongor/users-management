@@ -1,5 +1,11 @@
 package Validators;
 
+/**
+ *
+ * Содержит статические методы для валидации данных
+ *
+ * */
+
 public class MainValidator {
 
     public static boolean checkPhoneNumber(String phoneNumber){

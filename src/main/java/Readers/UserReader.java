@@ -12,6 +12,10 @@ import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 
+/**
+ * Реализует чтение списка пользователей из xml файла
+ *
+ * */
 
 public class UserReader {
 

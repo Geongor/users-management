@@ -8,6 +8,12 @@ import entity.UserList;
 
 import java.util.Scanner;
 
+/**
+ * Рулит программой
+ * Отвечает за организацию пользовательского интерфеса
+ *
+ * */
+
 public class UserManager {
 
     private UserList userList;
@@ -41,9 +47,16 @@ public class UserManager {
     }
 
     public void  saveUsers(){
-        writer = new UserWriter("test.xml", userList);
+        writer = new UserWriter(filePath, userList);
         writer.saveUsers();
     }
+
+    /**
+     * Основной метод класса
+     * Осуществляет организацию ПИ
+     *
+     * */
+
 
     public void launchUserManager(){
 
@@ -140,6 +153,7 @@ public class UserManager {
             } else {
                 System.out.println("Введено не число");
             }
+            /* Хотелось бы найти споссоб получше*/
         }
     }
 

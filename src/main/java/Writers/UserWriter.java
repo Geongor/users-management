@@ -1,12 +1,16 @@
 package Writers;
 
-import entity.User;
 import entity.UserList;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import java.io.File;
+
+/**
+ * Реализует запись списка пользователей из xml файла
+ *
+ * */
 
 public class UserWriter {
 
@@ -35,9 +39,9 @@ public class UserWriter {
     public void saveUsers(){
 
         try {
-            if (file.exists()) {
+
                 marshaller.marshal(users, file);
-            }
+
         } catch (JAXBException e){
             System.out.println("Что-то не так с XML");
         }

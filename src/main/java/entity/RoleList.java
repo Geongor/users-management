@@ -6,6 +6,14 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
+
+/**
+ *
+ * Класс-обертка
+ * Нужен для чтения списка возможных ролей
+ *
+ * */
+
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class RoleList {

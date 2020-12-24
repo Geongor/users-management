@@ -41,6 +41,16 @@ public class User {
         roles.add(role);
     }
 
+
+    /**
+     *
+     * Метод для нахождения списка ролей доступных для
+     * данного пользователя
+     *
+     * @param roles Список возможныхх ролей в приложении
+     * @return  список ролей доступных для данного пользователя
+     * */
+
     public List<Role> checkRoles(List<Role> roles){
 
         List<Role> validRoles = new ArrayList<Role>();
@@ -55,6 +65,14 @@ public class User {
 
         return validRoles;
     }
+
+    /**
+     *
+     * Вспомогательный метод для определения каких уровней полномочий
+     * еще нет у данного польщователя
+     *
+     * @return Список целых чисел обозначающий уровень полномочий
+     * */
 
     private List<Integer> getMissingLevels(){
 
@@ -71,6 +89,13 @@ public class User {
         return  missingLevels;
     }
 
+    /**
+     * Вызывает методы для ввода данных пользователя в консоль
+     *
+     * @param roleList список ролей возможных в данном приложении
+     *
+     * */
+
     public User inputUserWithConsole(List<Role> roleList){
 
         setNameWithConsole();
@@ -81,6 +106,12 @@ public class User {
 
         return this;
     }
+
+    /**
+     * Представляет интерфейс выбора ролей для пользователя
+     *
+     * @param roles список ролей возможных в данном приложении
+     * */
 
     public void chooseRoles(List<Role> roles){
 
@@ -94,16 +125,25 @@ public class User {
                 System.out.println("  " + i + ") " + role.toString() + "\n");
                 i++;
             }
+            System.out.println("  " + i + ") Выход");
             Scanner in = new Scanner(System.in);
             String temp = in.nextLine();
 
             if (MainValidator.checkString(temp)) {
 
-                if (roles.get(Integer.parseInt(temp)-1).getAuthorityLevel() == 3){
+                int num = Integer.parseInt(temp);
+                if (num < 1 || num > i){
+                    System.out.println("Введено число вне диапазана возмодныж вариантов");
+                    continue;
+                } else if (num == i){
+                    check = false;
+                    continue;
+
+                } else if (roles.get(num-1).getAuthorityLevel() == 3){
                     clearRoles();
                     check = false;
                 }
-                addRole(roles.get(Integer.parseInt(temp)-1));
+                addRole(roles.get(num-1));
             } else {
                 System.out.println("Введено не число");
                 continue;

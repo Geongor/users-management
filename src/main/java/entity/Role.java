@@ -2,6 +2,7 @@ package entity;
 
 import javax.xml.bind.annotation.*;
 
+
 @XmlRootElement(name = "role")
 public class Role {
 
