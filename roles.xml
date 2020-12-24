@@ -1,0 +1,22 @@
+<roleList>
+    <role>
+        <authorityLevel>1</authorityLevel>
+        <name>USER</name>
+    </role>
+    <role>
+        <authorityLevel>1</authorityLevel>
+        <name>CUSTOMER</name>
+    </role>
+	<role>
+        <authorityLevel>2</authorityLevel>
+        <name>ADMIN</name>
+    </role>
+    <role>
+        <authorityLevel>2</authorityLevel>
+        <name>PROVIDER</name>
+    </role>
+	<role>
+        <authorityLevel>3</authorityLevel>
+        <name>SUPER_ADMIN </name>
+    </role>
+</roleList>
